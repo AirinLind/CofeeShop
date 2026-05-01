@@ -11,13 +11,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #FAF7F2;
       color: #3D3229;
       line-height: 1.6;
-      overflow-x: hidden;
+      overflow-x: clip;
+      width: 100%;
     }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
@@ -130,6 +131,7 @@
       align-items: center;
       justify-content: space-between;
       height: 76px;
+      overflow: hidden;
     }
     .logo {
       display: flex;
@@ -196,7 +198,6 @@
       background: var(--olive-dark);
       box-shadow: 0 4px 16px rgba(107,123,58,0.3);
       transform: translateY(-1px);
-      color: var(--cream);
     }
     .burger {
       display: none;
@@ -264,9 +265,10 @@
     }
     .hero-image-dashed {
       position: absolute;
-      inset: -20px;
+      inset: -12px;
       border-radius: 2rem;
       border: 2px dashed rgba(212,197,169,0.6);
+      pointer-events: none;
     }
     .hero-image-glow {
       position: absolute;
@@ -328,13 +330,13 @@
     .hero-warm-glow {
       position: absolute;
       top: 50%;
-      right: 25%;
+      right: 0;
       transform: translateY(-50%);
-      width: 700px;
-      height: 700px;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
       background: rgba(107,123,58,0.04);
-      filter: blur(100px);
+      filter: blur(80px);
       pointer-events: none;
     }
     .hero-badge {
@@ -430,6 +432,7 @@
     .benefits {
       padding: 100px 0;
       background: var(--white);
+      overflow: hidden;
     }
     .benefits-grid {
       display: grid;
@@ -483,6 +486,7 @@
       padding: 100px 0;
       background: var(--cream);
       position: relative;
+      overflow: hidden;
     }
     .menu-layout {
       display: grid;
@@ -504,10 +508,11 @@
     }
     .menu-image-decoration {
       position: absolute;
-      inset: -16px;
+      inset: -12px;
       border-radius: 32px;
       border: 2px dashed var(--beige-warm);
       z-index: -1;
+      pointer-events: none;
     }
     .menu-items {
       display: flex;
@@ -567,6 +572,7 @@
     .reviews {
       padding: 100px 0;
       background: var(--white);
+      overflow: hidden;
     }
     .reviews-grid {
       display: grid;
@@ -631,16 +637,18 @@
       padding: 100px 0;
       background: var(--cream);
       position: relative;
+      overflow: hidden;
     }
     .signup-deco-1 {
       position: absolute;
       top: -60px;
       right: -60px;
-      width: 200px;
-      height: 200px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       border: 2px dashed var(--beige-warm);
       opacity: 0.5;
+      pointer-events: none;
     }
     .signup-card {
       max-width: 600px;
@@ -755,6 +763,7 @@
       background: var(--brown);
       color: var(--beige);
       margin-top: auto;
+      overflow: hidden;
     }
     .footer-inner {
       max-width: 1200px;
